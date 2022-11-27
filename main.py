@@ -77,16 +77,15 @@ def vacancy_statisctics_sj(languages, secret_key_sj):
     result = dict()
     for language in languages:
         salaries = []
-        pages_more = True
         for page in count():
-            if not pages_more:
-                break
             vacancies_at_page = get_vacancies_sj(language, secret_key_sj, page)
             for vacancy in vacancies_at_page['objects']:
                 salary = predict_rub_salary_sj(vacancy)
                 if salary:
                     salaries.append(salary)
             pages_more = vacancies_at_page['more']
+            if not pages_more:
+                break
 
         if salaries:
             average_salary = int(sum(salaries) / len(salaries))
@@ -110,7 +109,7 @@ def results_table(title, result, languages):
         ]
     table_body = []
     for language in languages:
-        table_data.append(
+        table_body.append(
             [
                 language,
                 result[language]['vacancies_found'],
