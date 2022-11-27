@@ -29,4 +29,7 @@ From scripts folder:
 python(or python3) main.py
 ```
 ### Example
+After initilaze script you get two tables in console.
+
+![image](https://user-images.githubusercontent.com/79669407/204155886-116fccbc-a1ff-4828-8a16-a9e702cb8e6d.png)
 
