@@ -43,6 +43,8 @@ def get_vacancies_statistic_hh(languages):
 
         if salaries:
             average_salary = int(sum(salaries) / len(salaries))
+        else:
+            average_salary = None
         vacancies_statistic[language] = {
             'vacancies_found': vacancies['found'],
             'vacancies_processed': len(salaries),
@@ -85,6 +87,8 @@ def get_vacancies_statisctic_sj(languages, secret_key_sj):
                 break
         if salaries:
             average_salary = int(sum(salaries) / len(salaries))
+        else:
+            average_salary = None
         vacancies_statistic[language] = {
             'vacancies_found': vacancies_at_page['total'],
             'vacancies_processed': len(salaries),
