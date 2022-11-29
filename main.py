@@ -103,7 +103,7 @@ def predict_salary(salary_from, salary_to):
         return salary_from * 1.2
     return (salary_from + salary_to) / 2
 
-def get_vacancies_table(title, result, languages):
+def get_vacancies_table(title, vacancies_statistic, languages):
     vacancies_table_heading = [
         ['Language', 'Vacancies_found', 'Vacancies_processed', 'Average_salary']
         ]
@@ -112,9 +112,9 @@ def get_vacancies_table(title, result, languages):
         vacancies_table_body.append(
             [
                 language,
-                result[language]['vacancies_found'],
-                result[language]['vacancies_processed'],
-                result[language]['average_salary']
+                vacancies_statistic[language]['vacancies_found'],
+                vacancies_statistic[language]['vacancies_processed'],
+                vacancies_statistic[language]['average_salary']
                 ]
             )
     vacancies_data_table = vacancies_table_heading + vacancies_table_body
